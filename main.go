@@ -13,11 +13,10 @@ import (
 	"github.com/aws/aws-sdk-go/aws/session"
 	"github.com/aws/aws-sdk-go/service/dynamodb"
 	"github.com/aws/aws-xray-sdk-go/xray"
-	"github.com/aws/aws-xray-sdk-go/xraylog"
 )
 
 func main() {
-	xray.SetLogger(xraylog.NewDefaultLogger(os.Stderr, xraylog.LogLevelDebug))
+	// xray.SetLogger(xraylog.NewDefaultLogger(os.Stderr, xraylog.LogLevelDebug))
 
 	sess := session.Must(session.NewSession())
 	xray.AWSSession(sess)
